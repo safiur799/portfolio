@@ -6,7 +6,7 @@ function Skills() {
   return (
     <div className="skil_container" id="skill">
       <div>
-        <h1 style={{ textAlign: "center" }}>Skill</h1>
+        <h1 style={{ textAlign: "center" }}>Skills</h1>
       </div>
       <div className="skill_cards_containers">
         {Skill.map((el, ind) => {

@@ -1,53 +1,109 @@
 .portfolio {
   background-color: aqua;
 }
- 
-.portfolio__main__container h1, 
+
+.portfolio__main__container h1,
 .portfolio__main__container p {
   text-align: center;
   margin-top: 3rem;
 }
- 
+
 #portfolio__card__container {
-  width: 50%;
+  width: 33% !important;
   padding: 10px;
   border: none;
 }
- 
+.portfolio__image {
+  width: 90%;
+  height: 100%;
+  margin: 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
 .portfolio__image:hover {
   cursor: pointer;
   filter: brightness(50%);
 }
- 
+
 .portfolio__click__info {
   position: absolute;
-  top: 50%;  
-  left: 50%; 
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   color: var(--font-color);
   display: none;
 }
- 
+
 .portfolio__image:hover + .portfolio__click__info {
   display: block;
 }
- 
+
 .modal-backdrop.show {
-  opacity: .1 !important;
+  opacity: 0.1 !important;
 }
- 
+
 #portfolio__modal__link {
-  padding: 0 0 1rem 1rem
+  padding: 0 0 1rem 1rem;
 }
- 
+
 #portfolio__modal__link:link {
   text-decoration: none;
 }
- 
-@media only screen and (max-width: 600px){
+
+@media only screen and (max-width: 600px) {
   #portfolio__card__container {
     width: 100%;
     padding: 0.5rem 2.5rem;
     border: none;
   }
+}
+.card_container {
+  width: 33%;
+}
+.card_container > .button_class {
+  position: absolute;
+  margin: -20px -20px;
+  position: relative;
+  text-align: center;
+  width: 70px;
+  background-color: blue;
+  top: 40%;
+  bottom: 0;
+  left: 40%;
+  color: white;
+  z-index: 16;
+  visibility: hidden;
+  font-weight: bold;
+  margin-top: 24px;
+  top: 100px;
+  cursor: pointer;
+}
+.card_container:hover > .button_class {
+  visibility: visible;
+  filter: brightness(50%);
+}
+@media only screen and (max-width: 600px) {
+  .card_container {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+.modal_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal_button > button {
+  padding: 5px 25px;
+  margin-left: 10px;
+  background-color: blue;
+  color: white;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: bold;
+}
+.modal_button > button:hover {
+  background-color: gray;
+  color: white;
 }

@@ -1,7 +1,7 @@
 .main_info {
   display: flex;
   /* flex-direction: row-reverse; */
-  position: absolute;
+  /* position: absolute; */
   color: var(--font-color);
   /* top: 0;
   right: 0;
@@ -11,4 +11,11 @@
   z-index: 1;
   flex-direction: column;
   color: peru;
+  margin-bottom: 10px;
+}
+@media only screen and (max-width: 700px) {
+  .main_info {
+    display: relative;
+    margin-bottom: 20px;
+  }
 }

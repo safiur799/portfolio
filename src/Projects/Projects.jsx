@@ -2,7 +2,8 @@ import React from "react";
 import "./Projects.css";
 import { useState } from "react";
 import { ProjectData } from "../Helpers/Projects";
-import Container from "react-bootstrap/Container";
+import styled from "styled-components";
+// import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Modal from "react-bootstrap/Modal";
 import Card from "react-bootstrap/Card";
@@ -22,18 +23,81 @@ function Projects() {
         size="lg"
         arial-lablledby="contained-modal-title-vcenter"
         centered
+        style={{ textAlign: "center" }}
       >
         <Modal.Header>
           <Modal.Title id="contained-modal-title-vcenter">
-            {data.desc}
+            <div style={{ marginLeft: "0" }}>
+              <Image
+                src={data.image}
+                style={{
+                  width: "80%",
+                }}
+              />
+            </div>
+            <div className="modal_button">
+              <button
+                style={{
+                  marginTop: "5px",
+                  border: "none",
+                  marginRight: "10px",
+                }}
+              >
+                <a
+                  href={data.link2}
+                  target="_blank"
+                  style={{ textDecoration: "none", color: "white" }}
+                >
+                  Source Code
+                </a>
+              </button>
+              <button
+                style={{
+                  marginTop: "5px",
+                  border: "none",
+                  color: "white",
+                  padding: "5px 15px",
+                }}
+              >
+                <a
+                  href={data.link}
+                  target="_blank"
+                  style={{
+                    textDecoration: "none",
+                    color: "white",
+                    marginLeft: "10px",
+                  }}
+                >
+                  Visit
+                </a>
+              </button>
+            </div>
+            {/* {data.desc} */}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>{data.link}</p>
-          <Image src={data.image} style={{ width: "600px" }} />
+          {/* <p>
+            <a href={data.link}> {data.link}</a>
+          </p> */}
+          <p
+            style={{
+              fontSize: "16px",
+              fontFamily: "sans-serif",
+              lineHeight: 1.5,
+            }}
+          >
+            <span>
+              <b>Description: </b>
+            </span>
+            {data.desc}
+            {/* <Image src={data.image} style={{ width: "600px" }} /> */}
+            {data.summary}
+          </p>
         </Modal.Body>
         <Modal.Footer>
-          <div>Technologies used:</div>
+          <div style={{ fontSize: "18px" }}>
+            <b>Technologies used:</b>
+          </div>
           <p style={{ marginRight: "auto" }}>{data.tech}</p>
           <Button
             onClick={() => {
@@ -48,13 +112,35 @@ function Projects() {
   };
   const mapped = ProjectData.map((el, ind) => {
     return (
-      <Card key={ind} id="#portfolio__card__container ">
+      <div
+        key={ind}
+        id="#portfolio__card__container"
+        className="card_container"
+      >
+        <div
+          className="button_class"
+          onClick={() => {
+            setTempData({
+              image: el.image,
+              link: el.link,
+              link2: el.link2,
+              desc: el.description,
+              summary: el.summary,
+              tech: el.tech,
+            });
+            setModalShow(true);
+          }}
+          src={el.image}
+        >
+          Click me
+        </div>
         <Image
           className="portfolio__image"
           onClick={() => {
             setTempData({
               image: el.image,
               link: el.link,
+              link2: el.link2,
               desc: el.description,
               summary: el.summary,
               tech: el.tech,
@@ -63,9 +149,9 @@ function Projects() {
           }}
           src={el.image}
         />
-        <div className="portfolio__click__info">&#x1F50E;&#xFE0E;</div>
+        <div className="portfolio__click__info"></div>
         {createModal(tempData)}
-      </Card>
+      </div>
     );
   });
   return (
@@ -77,11 +163,23 @@ function Projects() {
           https://github.com/safiur799
         </a>
       </p>
-      <Container fluid="lg" style={{ padding: "2rem 0" }}>
-        <Row>{mapped}</Row>
+
+      <Container style={{ padding: "2rem 0", marginLeft: "20px" }}>
+        {mapped}
       </Container>
     </div>
   );
 }
 
 export default Projects;
+
+const Container = styled.div`
+  display: flex;
+  felx-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  @media only screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+  }
+`;
