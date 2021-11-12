@@ -26,8 +26,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 3rem 2rem;
   margin-top: 30px;
+  padding-bottom: 5rem;
 }
 .form__container {
   display: flex;
@@ -51,7 +52,7 @@
   border-radius: 10px;
 }
 .form__container button {
-  background-color: blue;
+  background-color: #9c64c2;
   padding: 5px 0;
   color: white;
   border: none;
@@ -59,5 +60,5 @@
 }
 .form__container button:hover {
   background-color: gray;
-  color: black;
+  color: white;
 }

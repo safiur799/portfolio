@@ -11,9 +11,9 @@ function Home() {
       </div>
       <div className="container_text">
         <h5>Hello</h5>
-        <a href="/safiur.pdf" download>
+        {/* <a href="/safiur.pdf" download>
           <Button>Download Resume</Button>
-        </a>
+        </a> */}
         <h1>I'm Safiur </h1>
         <h3 style={{ fontSize: "20px" }}>I'm a full stack web developer</h3>
         <p>
@@ -21,12 +21,9 @@ function Home() {
           websites and web applications.
         </p>
         <div className="links">
-          <a
-            href="https://drive.google.com/drive/folders/1qZDorwWa0EO9BfHicuW3zQnSibt8RoqT?usp=sharing"
-            target="_blank"
-          >
+          <a href="/safiur.pdf" download target="_blank">
             <button className="resume_class" style={{ padding: "5px 20px" }}>
-              Resume
+              Download Resume
             </button>
           </a>
           <Container>

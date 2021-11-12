@@ -118,6 +118,7 @@ function Projects() {
         className="card_container"
       >
         <div
+          style={{ color: "#BCA0DC" }}
           className="button_class"
           onClick={() => {
             setTempData({
