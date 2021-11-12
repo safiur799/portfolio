@@ -11,6 +11,9 @@ function Home() {
       </div>
       <div className="container_text">
         <h5>Hello</h5>
+        <a href="/safiur.pdf" download>
+          <Button>Download Resume</Button>
+        </a>
         <h1>I'm Safiur </h1>
         <h3 style={{ fontSize: "20px" }}>I'm a full stack web developer</h3>
         <p>
@@ -74,4 +77,10 @@ const Container = styled.div`
       background-color: #fff;
       
   }
+`;
+const Button = styled.button`
+  position: absolute;
+  left: 87%;
+  top: 11%;
+  text-align: center;
 `;
