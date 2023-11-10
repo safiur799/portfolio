@@ -21,7 +21,7 @@ function Home() {
           websites and web applications.
         </p>
         <div className="links">
-          <a href="/safiur.pdf" download target="_blank">
+          <a href="/Safiur_Rahaman_fw10_210.pdf" download target="_blank">
             <button className="resume_class" style={{ padding: "5px 20px" }}>
               Download Resume
             </button>
